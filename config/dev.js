@@ -1,4 +1,4 @@
 export const config = {
   isProd: false,
-  dbURI: '',
+  mongoDBUri: 'mongodb://localhost/shopping-cart',
 };

@@ -1,10 +1,10 @@
 import express from 'express';
-// import { AuthorisationController } from '../controllers/authorisation';
-// import { TuneController } from '../controllers/tunes';
-// import { UserController } from '../controllers/user';
+import { ShoppingCartController } from '../controllers/shopping-cart';
 import URL from './constants';
 
 const router = new express.Router();
+
+router.post(URL.SHOPPING_CART.ADD_ITEM, ShoppingCartController.addItem);
 
 router.get('*', (req, res) => {
   res.sendStatus(404);

@@ -1,0 +1,60 @@
+{
+  "name": "express",
+  "version": "0.0.0",
+  "description": "Server for the test. ",
+  "main": "index.js",
+  "repository": "",
+  "author": "vanessa rodriguez",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "babel-node": "babel-node --presets=env",
+    "build": "node babel-node server.js build/server.js",
+    "dev": "nodemon --exec babel-node -- server.js",
+    "serve": "NODE_ENV=production node server-build.js",
+    "test": "mocha --use_strict 'tests/**/*Test.js' --require @babel/register --reporter spec"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx}": [
+      "eslint"
+    ]
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.6.0",
+    "aws-sdk": "^2.647.0",
+    "babel-eslint": "^10.1.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "bww2abc": "git+ssh://git@github.com:S-V-Labs/bww2abc.git",
+    "core-js": "3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "logger": "0.0.1",
+    "mongoose": "^5.6.13",
+    "morgan": "^1.9.1",
+    "node-environment-flags": "^1.0.6",
+    "passport-local": "^1.0.0",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.6.1",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "fs-readdir-recursive": "^1.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "mocha": "^7.0.0",
+    "nodemon": "^1.19.1",
+    "output-file-sync": "^2.0.1",
+    "passport-jwt": "^4.0.0",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
+    "sinon": "^8.1.1"
+  }
+}

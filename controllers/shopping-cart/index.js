@@ -1,3 +1,3 @@
-import { addItem } from './addItem';
+import { AddItem } from './addItem';
 
-export const ShoppingCartController = { addItem };
+export const ShoppingCartController = { AddItem };

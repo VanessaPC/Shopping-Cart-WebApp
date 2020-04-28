@@ -1,6 +1,6 @@
 import { Item } from '../../models/index';
 
-const getItems = (req, res, items) => {
+const addRemovedItems = (req, res, items) => {
   if (!items) {
     res.send(404);
   } else {
@@ -21,7 +21,7 @@ const getItems = (req, res, items) => {
   }
 };
 
-export const AddItems = (req, res) => {
+export const RemovedItems = (req, res) => {
   const item = req.body;
-  return getItems(req, res, item);
+  return addRemovedItems(req, res, item);
 };

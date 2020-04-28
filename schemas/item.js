@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const ItemSchema = new mongoose.Schema({
+export const ItemSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -10,5 +10,3 @@ const ItemSchema = new mongoose.Schema({
     required: true,
   },
 });
-
-export default ItemSchema;

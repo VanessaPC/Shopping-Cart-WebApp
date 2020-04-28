@@ -4,7 +4,9 @@ import URL from './constants';
 
 const router = new express.Router();
 
-router.post(URL.SHOPPING_CART.ADD_ITEM, ShoppingCartController.AddItem);
+router.post(URL.SHOPPING_CART.ADD_ITEMS, ShoppingCartController.AddItems);
+router.post(URL.SHOPPING_CART.REMOVED_ITEMS, ShoppingCartController.RemovedItems);
+router.post(URL.SHOPPING_CART.CHECKOUT, ShoppingCartController.Checkout);
 
 router.get('*', (req, res) => {
   res.sendStatus(404);

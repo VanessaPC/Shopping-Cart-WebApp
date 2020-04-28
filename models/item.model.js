@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
 import { itemModalName } from './constants';
-import ItemSchema from '../schemas/tune';
+import { ItemSchema } from '../schemas/item';
 
-export const Tunes = mongoose.model(itemModalName, ItemSchema);
+export const Items = mongoose.model(itemModalName, ItemSchema);

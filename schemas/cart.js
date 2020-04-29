@@ -1,22 +1,17 @@
 import mongoose from 'mongoose';
 import { itemModelName } from '../models/constants';
+import { ItemSchema } from '../schemas/item';
 
 export const CartSchema = new mongoose.Schema({
-  name: {
+  _id: {
     type: String,
-    required: false,
+    required: true,
   },
-  price: {
+  totalPrice: {
     type: Number,
     required: true,
   },
-  cartItems: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: itemModelName,
-      required: true,
-    },
-  ],
+  cartItems: [ItemSchema],
   removedItems: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -27,10 +22,6 @@ export const CartSchema = new mongoose.Schema({
   removedItemsQuantity: {
     type: Number,
     required: false,
-  },
-  quantity: {
-    type: Number,
-    required: true,
   },
   totalItems: {
     type: Number,

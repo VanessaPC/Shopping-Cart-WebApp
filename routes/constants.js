@@ -5,7 +5,7 @@ const URL = {
   SHOPPING_CART: {
     BASE: SHOPPING_CART_BASE,
     ADD_ITEM: `${SHOPPING_CART_BASE}/add-item`,
-    REMOVE_ITEMS: `${SHOPPING_CART_BASE}/remove_items`,
+    REMOVE_ITEM: `${SHOPPING_CART_BASE}/remove_item`,
     CHECKOUT: `${SHOPPING_CART_BASE}/checkout`,
   },
   USER: {

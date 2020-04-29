@@ -7,10 +7,9 @@ const newUserData = {
   name: 'Joseph Shopper',
   cart: {
     _id: '5e6e49b901109e15788ebe53',
-    price: 0,
+    totalPrice: 0,
     cartItems: [],
     removedItems: [],
-    quantity: 0,
     totalItems: 0,
   },
   removedItems: [],

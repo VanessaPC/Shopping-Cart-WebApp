@@ -1,10 +1,6 @@
 import { User } from '../../models/user.model';
 import { Items } from '../../models/item.model';
-
-const updateCart = (cart, item) => {
-  cart.totalItems += item.quantity;
-  cart.totalPrice += item.price * item.quantity;
-};
+import { updateCart, MULTIPLIER } from './helpers';
 
 export const addItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
@@ -25,7 +21,8 @@ export const addItem = async (req, res) => {
       itemInCart.quantity += requestedItem.quantity;
     }
 
-    updateCart(cart, requestedItem);
+    updateCart(cart, requestedItem, MULTIPLIER.ADD);
+
     user.save();
     res.status(200).send({ message: 'Item saved' });
   } catch (err) {

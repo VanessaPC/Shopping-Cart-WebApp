@@ -1,6 +1,6 @@
 import { addItem } from './addItem';
 import { removeItem } from './removeItem';
 import { getAllItems } from './getAllItems';
-import { Checkout } from './checkout';
+import { checkout } from './checkout';
 
-export const ShoppingCartController = { addItem, removeItem, getAllItems, Checkout };
+export const ShoppingCartController = { addItem, removeItem, getAllItems, checkout };

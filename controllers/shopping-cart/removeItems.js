@@ -1,27 +1,10 @@
-import { Item } from '../../models/index';
+import { Cart } from '../../models/cart.model';
 
-const addRemovedItems = (req, res, items) => {
-  if (!items) {
-    res.send(404);
-  } else {
-    try {
-      items.map(
-        items,
-        Item.findOne({
-          id: items.id,
-        }).then(() => {
-          res.status(200).send({
-            message: 'item exists',
-          });
-        })
-      );
-    } catch (err) {
-      return err;
-    }
-  }
-};
+export const RemoveItems = (req, res) => {
+  const productId = req.params.id;
+  let cart = new Cart(req.session.cart ? req.session.cart : {});
 
-export const RemovedItems = (req, res) => {
-  const item = req.body;
-  return addRemovedItems(req, res, item);
+  cart.remove(productId);
+  req.session.cart = cart;
+  res.status(200).send(req.session.cart).redirect('/cart');
 };

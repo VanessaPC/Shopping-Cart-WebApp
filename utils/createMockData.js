@@ -9,7 +9,6 @@ const newUserData = {
     _id: '5e6e49b901109e15788ebe53',
     totalPrice: 0,
     cartItems: [],
-    removedItems: [],
     totalItems: 0,
   },
   removedItems: [],

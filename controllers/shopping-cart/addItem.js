@@ -13,7 +13,9 @@ export const addItem = async (req, res) => {
 
   try {
     const item = await Items.findOne({ _id: requestedItem._id });
-    if (!item) res.send({ message: 'Item does not exist' });
+    if (!item) {
+      return res.send({ message: 'Item does not exist' });
+    }
 
     const itemInCart = cart.cartItems.find((savedItem) => item._id === savedItem._id);
 

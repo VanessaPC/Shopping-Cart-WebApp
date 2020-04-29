@@ -1,6 +1,4 @@
-import { Cart } from '../../models/cart.model';
 import { User } from '../../models/user.model';
-import { Items } from '../../models/item.model';
 
 const updateCart = (cart, item) => {
   cart.totalItems -= item.quantity;
@@ -8,28 +6,37 @@ const updateCart = (cart, item) => {
 };
 
 const updateRemovedItems = (user, deletedItems) => {
-  // check if there are items, if not, i just push a new one,
-  // if there are any items stored in there i check whether there is one,
-  // if so, then I add to that the new delted itesm.
+  const { removedItems } = user;
+  const removedItem = removedItems.find((savedItem) => deletedItems._id === savedItem._id);
+  console.log('deleteditems: ', deletedItems);
+  if (!removedItem) {
+    removedItems.push(deletedItems);
+  } else {
+    removedItem.quantity += deletedItems.quantity;
+  }
 };
 
-export const removeItems = async (req, res) => {
+export const removeItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
   const { cart } = user;
   const deleteItem = req.body;
 
   try {
-    const itemInCart = cart.cartItems.find((item) => deleteItem.id === item.id);
+    const itemInCart = cart.cartItems.find((item) => deleteItem._id === item._id);
 
-    if (!itemInCart) res.send({ message: 'Item does not exist in user cart' });
+    if (!itemInCart) {
+      return res.send({ message: 'Item does not exist in user cart' });
+    }
 
     itemInCart.quantity -= deleteItem.quantity;
-    user.removedItems.push(deleteItem);
+
     updateCart(cart, deleteItem);
+    updateRemovedItems(user, deleteItem);
 
     user.save();
     res.status(200).send({ message: 'Item deleted' });
   } catch (err) {
+    console.log('ERROR: ', err);
     res.send({ message: err });
   }
 };

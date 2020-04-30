@@ -6,6 +6,12 @@ import { connectDb } from './models';
 const port = process.env.PORT || LOCAL_PORT;
 const server = http.createServer(app);
 
-connectDb().then(async () => {
-  server.listen(port, () => console.log(`Example app listening on port ${port}!`));
-});
+(async () => {
+  connectDb().then(async () => {
+    server.listen(port, () => console.log(`Example app listening on port ${port}!`));
+  });
+})();
+
+
+
+

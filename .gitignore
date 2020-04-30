@@ -1,7 +1,0 @@
-# dependencies
-.DS_Store
-.env
-/node_modules
-upload/
-.vscode/
-node_modules

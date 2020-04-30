@@ -39,6 +39,9 @@ This are personal notes, taken while working on it, you can completely discard o
 - [ ] TS to the server.
 - [ ] Authentication to server.
 - [ ] code documentation
+- [ ] Keep track of how many items do I have and how many have been bought to render real time quantities on shopping list.
+- [ ] Add Cypress on client side
+- [ ] Add unit test on server side
 
 ## Learn More
 

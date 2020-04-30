@@ -1,7 +1,8 @@
-const SHOPPING_CART_BASE = '/shopping-cart';
+const API_BASE = '/api';
+const SHOPPING_CART_BASE = `${API_BASE}/shopping-cart`;
 
 const URL = {
-  BASE: '/',
+  BASE: API_BASE,
   SHOPPING_CART: {
     BASE: SHOPPING_CART_BASE,
     ADD_ITEM: `${SHOPPING_CART_BASE}/add-item`,
@@ -9,7 +10,7 @@ const URL = {
     CHECKOUT: `${SHOPPING_CART_BASE}/checkout`,
   },
   USER: {
-    BASE: '/user',
+    BASE: `${API_BASE}/user`,
   },
 };
 

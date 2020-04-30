@@ -14,8 +14,4 @@ router.get(URL.USER.BASE, UserController.getUser);
 
 router.get(URL.BASE, AppStartUp);
 
-router.get('*', (req, res) => {
-  res.sendStatus(404);
-});
-
 export default router;

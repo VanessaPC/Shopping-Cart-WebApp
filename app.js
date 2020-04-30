@@ -2,6 +2,19 @@ import express from 'express';
 import router from './routes';
 import cors from 'cors';
 
+import next from 'next';
+import { config as CONFIG} from './config';
+
+export const nextApp = next({
+  dir: CONFIG.CLIENT_SRC,
+});
+
+const handler = nextApp.getRequestHandler();
+
+router.all('*', (req, res) => {
+  handler(req, res);
+});
+
 export const app = express();
 
 app.use((req, res, next) => {

@@ -1,0 +1,4 @@
+"hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged",
+      "prepare-commit-msg": "./tools/hooks/prepare-commit-msg.sh ${HUSKY_GIT_PARAMS}"
+}

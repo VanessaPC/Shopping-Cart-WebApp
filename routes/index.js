@@ -6,6 +6,8 @@ import URL from './constants';
 
 const router = new express.Router();
 
+router.get(URL.SHOPPING_CART.BASE, ShoppingCartController.getAllItemsList);
+router.get(URL.SHOPPING_CART.GET_ONE_ITEM, ShoppingCartController.getOneItem);
 router.post(URL.SHOPPING_CART.ADD_ITEM, ShoppingCartController.addItem);
 router.post(URL.SHOPPING_CART.REMOVE_ITEM, ShoppingCartController.removeItem);
 router.get(URL.SHOPPING_CART.CHECKOUT, ShoppingCartController.checkout);

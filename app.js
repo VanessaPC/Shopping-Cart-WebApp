@@ -3,9 +3,10 @@ import router from './routes';
 import cors from 'cors';
 
 import next from 'next';
-import { config as CONFIG} from './config';
+import { config as CONFIG } from './config';
 
 export const nextApp = next({
+  dev: true,
   dir: CONFIG.CLIENT_SRC,
 });
 

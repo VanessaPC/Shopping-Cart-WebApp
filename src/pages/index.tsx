@@ -1,28 +1,14 @@
-import Head from 'next/head';
+import React from 'react';
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+// CHECK the status of the user here:
+// if no user, send to login
+// there have a registration part
+// if user is here, send to shopping cart
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+const LandingPage = () => (
+  <div>
+    <p> Landing</p>
+  </div>
+);
 
-      <footer>
-        <a
-          href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-        </a>
-      </footer>
-    </div>
-  );
-}
+export default LandingPage;

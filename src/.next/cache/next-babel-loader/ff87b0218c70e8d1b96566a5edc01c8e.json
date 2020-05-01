@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\n\nvar LandingPage = function LandingPage() {\n  return __jsx(\"div\", null, __jsx(\"p\", null, \" Landing\"));\n};\n\nexport default LandingPage;","map":null,"metadata":{},"sourceType":"module"}

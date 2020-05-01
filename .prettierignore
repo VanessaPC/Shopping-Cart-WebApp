@@ -2,4 +2,3 @@ package-lock.json
 .next
 node_modules/
 deploy/
-server/

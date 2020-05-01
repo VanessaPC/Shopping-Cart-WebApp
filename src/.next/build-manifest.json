@@ -1,38 +1,32 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_bc8aa67234757793b72a.js",
+    "static/development/dll/dll_bc8aa67234757793b72a.js.map"
+  ],
   "lowPriorityFiles": [
-    "static/dsRd8u4aocNpWHOPb-Y6q/_buildManifest.js",
-    "static/dsRd8u4aocNpWHOPb-Y6q/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.d5efbf0a8a20bb777e8e.js",
-      "static/runtime/main-c58d899107bdf74c35b1.js"
-    ],
     "/_app": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.d5efbf0a8a20bb777e8e.js",
-      "static/chunks/01104d7b63dc4684113cc284c77bd02a39918f39.e30ac54fce1eddaf297b.js",
-      "static/runtime/main-c58d899107bdf74c35b1.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.d5efbf0a8a20bb777e8e.js",
-      "static/runtime/main-c58d899107bdf74c35b1.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_polyfills": [
-      "static/runtime/polyfills-6cbf4170e01cd1310bb2.js"
+      "static/runtime/polyfills.js",
+      "static/runtime/polyfills.js.map"
     ],
-    "/index": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.d5efbf0a8a20bb777e8e.js",
-      "static/runtime/main-c58d899107bdf74c35b1.js"
+    "/shop": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
-    "/shopping-cart": [
-      "static/runtime/webpack-b65cab0b00afd201cbda.js",
-      "static/chunks/framework.d5efbf0a8a20bb777e8e.js",
-      "static/runtime/main-c58d899107bdf74c35b1.js"
+    "/shop/product/[id]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

@@ -31,8 +31,8 @@ This are personal notes, taken while working on it, you can completely discard o
   Approx. 2 Hours -> Done with routes and calls for Server to create a shopping cart in MongoDB, updating user cart, adding and removing items.
   Clean up of code, and biggest code smells. Happy with idea behind it and how is looking.
 - Thursday:
-  -> Set up of conbined server plus client side app. Typescript set up. Calls to server set up and working, initial code architecture set up for server side render and initial minimal store,
-  initial design set up.
+  Approx 3 Hours -> Set up of combined server plus client side app. Typescript set up. Calls to server set up and working, initial code architecture set up for server side render and initial minimal store,
+- Friday:
 
 ### I'd like to add:
 

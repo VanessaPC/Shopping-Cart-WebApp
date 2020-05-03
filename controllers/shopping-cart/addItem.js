@@ -8,17 +8,21 @@ export const addItem = async (req, res) => {
   const requestedItem = req.body;
 
   try {
-    const item = await Items.findOne({ _id: requestedItem._id });
-    if (!item) {
+    const stockItem = await Items.findOne({ _id: requestedItem._id });
+    if (!stockItem) {
       return res.send({ message: 'Item does not exist' });
     }
 
-    const itemInCart = cart.cartItems.find((savedItem) => item._id === savedItem._id);
+    const cartItem = cart.cartItems.find((savedItem) => stockItem._id === savedItem._id);
 
-    if (!itemInCart) {
+    if (!cartItem) {
       cart.cartItems.push(requestedItem);
     } else {
-      itemInCart.quantity += requestedItem.quantity;
+      if (cartItem.quantity + requestedItem.quantity <= stockItem.quantity) {
+        cartItem.quantity += requestedItem.quantity;
+      } else {
+        return res.send({ message: 'error' });
+      }
     }
 
     updateCart(cart, requestedItem, MULTIPLIER.ADD);

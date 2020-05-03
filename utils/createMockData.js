@@ -1,6 +1,6 @@
 import { User } from '../models/user.model';
 import { Items } from '../models/item.model';
-import { shopping_cart } from '../dataset/shopping-cart';
+import { stock } from '../dataset/stock';
 
 const newUserData = {
   _id: '5e0efe265ae4232f32541f56',
@@ -22,7 +22,7 @@ export const createMockData = () => {
 };
 
 export const createShoppingItemsData = () => {
-  shopping_cart.map((item) =>
+  stock.map((item) =>
     Items.findOneAndUpdate({ _id: item._id }, item, { upsert: true }, (err, item) => {
       if (err) return { error: err };
     })

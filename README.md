@@ -32,7 +32,8 @@ This are personal notes, taken while working on it, you can completely discard o
   Clean up of code, and biggest code smells. Happy with idea behind it and how is looking.
 - Thursday:
   Approx 3 Hours -> Set up of combined server plus client side app. Typescript set up. Calls to server set up and working, initial code architecture set up for server side render and initial minimal store,
-- Friday:
+- Friday: Approx: 2 hours. connected two calls. More strucutre on front end.
+- Sunday: List connected with all the add, two more calls added and i'm ok with how list works. Some cleanup on server and front end side.
 
 ### I'd like to add:
 

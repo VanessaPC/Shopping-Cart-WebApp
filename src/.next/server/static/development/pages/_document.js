@@ -922,10 +922,6 @@ var MyDocument = /*#__PURE__*/function (_Document) {
 
   _createClass(MyDocument, [{
     key: "render",
-    //   static async getInitialProps(ctx: any) {
-    //     const initialProps = await Document.getInitialProps(ctx);
-    //     return { ...initialProps };
-    //   }
     value: function render() {
       return __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], null), __jsx("body", null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
     }

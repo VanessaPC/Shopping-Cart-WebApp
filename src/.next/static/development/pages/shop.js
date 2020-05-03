@@ -38,6 +38,115 @@ function _arrayWithHoles(arr) {
 
 /***/ }),
 
+/***/ "../node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!***********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray */ "../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr);
+}
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js":
+/*!**********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _asyncToGenerator; });
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!*********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+/***/ }),
+
 /***/ "../node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
 /*!**************************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
@@ -93,6 +202,22 @@ function _nonIterableRest() {
 
 /***/ }),
 
+/***/ "../node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!***********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
 /***/ "../node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
 /*!*******************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
@@ -117,6 +242,30 @@ function _slicedToArray(arr, i) {
 
 /***/ }),
 
+/***/ "../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!***********************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "../node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "../node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray */ "../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread */ "../node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__["default"])();
+}
+
+/***/ }),
+
 /***/ "../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js":
 /*!********************************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
@@ -137,6 +286,18 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/regenerator/index.js":
+/*!***********************************************************!*\
+  !*** ../node_modules/@babel/runtime/regenerator/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "../node_modules/regenerator-runtime/runtime.js");
+
 
 /***/ }),
 
@@ -7884,6 +8045,174 @@ var Item = function Item(_ref) {
 
 /***/ }),
 
+/***/ "./components/product-row/helpers.tsx":
+/*!********************************************!*\
+  !*** ./components/product-row/helpers.tsx ***!
+  \********************************************/
+/*! exports provided: getStockQuantityError, stopReloadOnItemNotAdded, getButtonText */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStockQuantityError", function() { return getStockQuantityError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stopReloadOnItemNotAdded", function() { return stopReloadOnItemNotAdded; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getButtonText", function() { return getButtonText; });
+var getStockQuantityError = function getStockQuantityError(data) {
+  if (data && data.message && data.message === 'error') {
+    alert('We do not have that much stock, please adjust quantity');
+  }
+};
+var stopReloadOnItemNotAdded = function stopReloadOnItemNotAdded(itemAdded) {
+  window.addEventListener('onbeforeunload', function (event) {
+    if (!itemAdded) {
+      alert('You have not added to your basket all the items, add them to not loose the information.');
+    }
+  });
+};
+var getButtonText = function getButtonText(quantity) {
+  if (quantity > 0) {
+    return 'Update';
+  }
+
+  return 'Add';
+};
+
+/***/ }),
+
+/***/ "./components/product-row/index.tsx":
+/*!******************************************!*\
+  !*** ./components/product-row/index.tsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "../node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config */ "./config/index.tsx");
+/* harmony import */ var axios_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios-hooks */ "../node_modules/axios-hooks/es/index.js");
+/* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../item */ "./components/item/index.tsx");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./helpers */ "./components/product-row/helpers.tsx");
+
+
+
+
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+
+
+
+
+var ProductRow = function ProductRow(_ref) {
+  var product = _ref.product,
+      savedQuantity = _ref.savedQuantity,
+      onCartUpdate = _ref.onCartUpdate;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(savedQuantity),
+      selectedQuantity = _useState[0],
+      setSelectedQuantity = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(true),
+      itemAdded = _useState2[0],
+      setItemAdded = _useState2[1];
+
+  var _useAxios = Object(axios_hooks__WEBPACK_IMPORTED_MODULE_7__["default"])({
+    url: _config__WEBPACK_IMPORTED_MODULE_6__["default"].addItem,
+    method: 'POST'
+  }, {
+    manual: true
+  }),
+      _useAxios2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useAxios, 2),
+      _useAxios2$ = _useAxios2[0],
+      postData = _useAxios2$.data,
+      putLoading = _useAxios2$.loading,
+      putError = _useAxios2$.error,
+      executePost = _useAxios2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["getStockQuantityError"])(postData);
+  }, [postData]);
+
+  var onQuantityUpdate = function onQuantityUpdate(value) {
+    setSelectedQuantity(value);
+    setItemAdded(false);
+  };
+
+  var onItemUpdate = /*#__PURE__*/function () {
+    var _ref2 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
+      var postData;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              postData = _objectSpread(_objectSpread({}, product), {}, {
+                quantity: selectedQuantity
+              });
+              _context.next = 3;
+              return executePost({
+                data: postData
+              });
+
+            case 3:
+              setItemAdded(true);
+              onCartUpdate();
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function onItemUpdate() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["stopReloadOnItemNotAdded"])(itemAdded);
+  return __jsx("div", {
+    key: product._id
+  }, __jsx(_item__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    product: product
+  }), __jsx("label", {
+    id: "quantity-select"
+  }, "Select a quantity:"), __jsx("select", {
+    name: "item-quantity",
+    id: "quantity-select",
+    value: selectedQuantity,
+    onChange: function onChange(e) {
+      return onQuantityUpdate(parseInt(e.target.value));
+    }
+  }, Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(Array(product.inStockQuantity)).map(function (u, i) {
+    return __jsx("option", {
+      key: i,
+      value: i + 1
+    }, i + 1);
+  })), __jsx("button", {
+    type: "submit",
+    onClick: onItemUpdate
+  }, Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["getButtonText"])(savedQuantity)), __jsx("p", null, "In stock ", product.quantity));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductRow);
+
+/***/ }),
+
 /***/ "./config/index.tsx":
 /*!**************************!*\
   !*** ./config/index.tsx ***!
@@ -7913,7 +8242,9 @@ __webpack_require__.r(__webpack_exports__);
   findSingleItem: function findSingleItem(id) {
     return "http://localhost:3100/api/shop/get-item/".concat(id);
   },
-  getProductList: 'http://localhost:3100/api/shop'
+  getProductList: 'http://localhost:3100/api/shop',
+  getShoppingCart: 'http://localhost:3100/api/shop/cart',
+  addItem: 'http://localhost:3100/api/shop/add-item'
 });
 
 /***/ }),
@@ -7934,7 +8265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios-hooks */ "../node_modules/axios-hooks/es/index.js");
-/* harmony import */ var _components_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/item */ "./components/item/index.tsx");
+/* harmony import */ var _components_product_row__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/product-row */ "./components/product-row/index.tsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -7952,23 +8283,42 @@ var ShopList = function ShopList() {
       error = _useAxios2$.error,
       refetch = _useAxios2[1];
 
-  if (loading) {
+  var _useAxios3 = Object(axios_hooks__WEBPACK_IMPORTED_MODULE_4__["default"])(_config__WEBPACK_IMPORTED_MODULE_2__["default"].getShoppingCart),
+      _useAxios4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useAxios3, 2),
+      _useAxios4$ = _useAxios4[0],
+      cartData = _useAxios4$.data,
+      loadingCart = _useAxios4$.loading,
+      cartError = _useAxios4$.error,
+      refetchCart = _useAxios4[1];
+
+  if (loading || loadingCart) {
     return __jsx("p", null, "loading");
   }
 
-  if (error) {
+  if (error || cartError) {
     return __jsx("p", null, "Our list broke!");
   }
 
-  return __jsx("div", null, __jsx("h2", null, "Product List"), data.map(function (product) {
+  var getItemInCart = function getItemInCart(productId) {
+    return cartData.cartItems.find(function (item) {
+      return item._id === productId;
+    });
+  };
+
+  return __jsx("div", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/shop/checkout/[cart]",
+    as: "/shop/checkout"
+  }, __jsx("a", null, "Go to checkout")), __jsx("h2", null, "Product List"), data.map(function (product) {
     return __jsx("div", {
       key: product._id
-    }, __jsx(_components_item__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      product: product
+    }, __jsx(_components_product_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      product: product,
+      savedQuantity: getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0,
+      onCartUpdate: refetchCart
     }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/shop/product/[id]",
       as: "/shop/product/".concat(product._id)
-    }, "Add"));
+    }, __jsx("a", null, "Go to checkout")));
   }));
 };
 

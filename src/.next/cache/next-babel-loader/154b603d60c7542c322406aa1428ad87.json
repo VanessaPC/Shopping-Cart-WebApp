@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  findSingleItem: function findSingleItem(id) {\n    return \"http://localhost:3100/api/shop/get-item/\".concat(id);\n  },\n  getProductList: 'http://localhost:3100/api/shop',\n  addItem: 'https://localhost:3100/api/shop/add-item'\n};","map":null,"metadata":{},"sourceType":"module"}

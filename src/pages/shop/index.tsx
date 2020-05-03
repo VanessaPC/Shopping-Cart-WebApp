@@ -17,9 +17,11 @@ const ShopList = () => {
     return <p>Our list broke!</p>;
   }
   const getItemInCart = (productId: number) => cartData.cartItems.find((item) => item._id === productId);
+  const getCurrentQuantity = (product) => (getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0);
+
   return (
     <div>
-      <Link href="/shop/checkout/[cart]" as={`/shop/checkout`}>
+      <Link href="/shop/checkout/" as={`/shop/checkout`}>
         <a>Go to checkout</a>
       </Link>
       <h2>Product List</h2>
@@ -31,7 +33,7 @@ const ShopList = () => {
             onCartUpdate={refetchCart}
           />
           <Link href="/shop/product/[id]" as={`/shop/product/${product._id}`}>
-            <a>Go to checkout</a>
+            <a>View product</a>
           </Link>
         </div>
       ))}

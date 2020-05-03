@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2355,8 +2355,12 @@ var ShopList = function ShopList() {
     });
   };
 
+  var getCurrentQuantity = function getCurrentQuantity(product) {
+    return getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0;
+  };
+
   return __jsx("div", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/shop/checkout/[cart]",
+    href: "/shop/checkout/",
     as: "/shop/checkout"
   }, __jsx("a", null, "Go to checkout")), __jsx("h2", null, "Product List"), data.map(function (product) {
     return __jsx("div", {
@@ -2368,7 +2372,7 @@ var ShopList = function ShopList() {
     }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: "/shop/product/[id]",
       as: "/shop/product/".concat(product._id)
-    }, __jsx("a", null, "Go to checkout")));
+    }, __jsx("a", null, "View product")));
   }));
 };
 
@@ -2376,7 +2380,7 @@ var ShopList = function ShopList() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!************************************!*\
   !*** multi ./pages/shop/index.tsx ***!
   \************************************/

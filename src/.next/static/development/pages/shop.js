@@ -8305,8 +8305,12 @@ var ShopList = function ShopList() {
     });
   };
 
+  var getCurrentQuantity = function getCurrentQuantity(product) {
+    return getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0;
+  };
+
   return __jsx("div", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/shop/checkout/[cart]",
+    href: "/shop/checkout/",
     as: "/shop/checkout"
   }, __jsx("a", null, "Go to checkout")), __jsx("h2", null, "Product List"), data.map(function (product) {
     return __jsx("div", {
@@ -8318,7 +8322,7 @@ var ShopList = function ShopList() {
     }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/shop/product/[id]",
       as: "/shop/product/".concat(product._id)
-    }, __jsx("a", null, "Go to checkout")));
+    }, __jsx("a", null, "View product")));
   }));
 };
 
@@ -8326,7 +8330,7 @@ var ShopList = function ShopList() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*****************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fshop&absolutePagePath=%2FUsers%2Fvanessa%2FDocuments%2FProjects%2FShoppingCart%2Fshoppingcart%2Fsrc%2Fpages%2Fshop%2Findex.tsx ***!
   \*****************************************************************************************************************************************************************************/
@@ -8349,5 +8353,5 @@ module.exports = dll_e6a94776c4176f860599;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=shop.js.map

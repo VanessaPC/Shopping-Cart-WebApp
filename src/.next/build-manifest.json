@@ -27,10 +27,6 @@
     "/shop": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/shop/checkout": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

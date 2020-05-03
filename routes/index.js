@@ -10,7 +10,7 @@ router.get(URL.SHOPPING_CART.BASE, ShoppingCartController.getAllItemsList);
 router.get(URL.SHOPPING_CART.GET_ONE_ITEM, ShoppingCartController.getOneItem);
 router.post(URL.SHOPPING_CART.ADD_ITEM, ShoppingCartController.addItem);
 router.post(URL.SHOPPING_CART.REMOVE_ITEM, ShoppingCartController.removeItem);
-router.get(URL.SHOPPING_CART.CART, ShoppingCartController.checkout);
+router.get(URL.SHOPPING_CART.CART, ShoppingCartController.getCart);
 
 router.get(URL.USER.BASE, UserController.getUser);
 

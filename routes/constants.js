@@ -9,7 +9,6 @@ const URL = {
     GET_ONE_ITEM: `${SHOPPING_CART_BASE}/get-item/:id`,
     ADD_ITEM: `${SHOPPING_CART_BASE}/add-item`,
     REMOVE_ITEM: `${SHOPPING_CART_BASE}/remove-item`,
-    CHECKOUT: `${SHOPPING_CART_BASE}/checkout`,
   },
   USER: {
     BASE: `${API_BASE}/user`,

@@ -1,6 +1,6 @@
 import { User } from '../../models/user.model';
 import { Items } from '../../models/item.model';
-import { updateCart, MULTIPLIER } from './helpers';
+import { updateCart } from './helpers';
 
 export const addItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
@@ -14,22 +14,25 @@ export const addItem = async (req, res) => {
     }
 
     const cartItem = cart.cartItems.find((savedItem) => stockItem._id === savedItem._id);
+    let previousCartItem;
 
     if (!cartItem) {
       cart.cartItems.push(requestedItem);
     } else {
-      if (cartItem.quantity + requestedItem.quantity <= stockItem.quantity) {
-        cartItem.quantity += requestedItem.quantity;
+      if (requestedItem.quantity <= stockItem.quantity) {
+        previousCartItem = cartItem.quantity;
+        cartItem.quantity = requestedItem.quantity;
       } else {
         return res.send({ message: 'error' });
       }
     }
 
-    updateCart(cart, requestedItem, MULTIPLIER.ADD);
+    updateCart(user, cart, requestedItem, previousCartItem);
 
     user.save();
     res.status(200).send({ message: 'Item saved' });
   } catch (err) {
-    res.send({ error: err });
+    console.log('errrrr', err);
+    res.send({ error: 'here?' });
   }
 };

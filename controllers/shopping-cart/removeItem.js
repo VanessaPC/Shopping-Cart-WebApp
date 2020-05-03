@@ -1,5 +1,5 @@
 import { User } from '../../models/user.model';
-import { updateRemovedItems, updateCart, MULTIPLIER } from './helpers';
+import { updateRemovedItems, updateCart } from './helpers';
 
 export const removeItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
@@ -13,8 +13,8 @@ export const removeItem = async (req, res) => {
     }
     itemInCart.quantity -= deleteItem.quantity;
 
-    updateCart(cart, deleteItem, MULTIPLIER.REMOVE);
-    updateRemovedItems(user, deleteItem);
+    updateCart(user, cart, deleteItem);
+    updateRemovedItems(user, deleteItem, deleteItem.quantity);
 
     user.save();
     res.status(200).send({ message: 'Item deleted' });

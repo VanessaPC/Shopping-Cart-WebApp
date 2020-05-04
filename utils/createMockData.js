@@ -4,6 +4,7 @@ import { stock } from '../dataset/stock';
 
 const newUserData = {
   _id: '5e0efe265ae4232f32541f56',
+  status: 'logged_in',
   name: 'Joseph Shopper',
   cart: {
     _id: '5e6e49b901109e15788ebe53',

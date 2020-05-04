@@ -4,6 +4,10 @@ import { cartModelName } from '../models/constants';
 import { ItemSchema } from '../schemas/item';
 
 export const UserSchema = new mongoose.Schema({
+  status: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: false,

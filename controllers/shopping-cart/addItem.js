@@ -21,7 +21,7 @@ export const addItem = async (req, res) => {
       requestedItem.inStockQuantity = stockQuantity;
       cart.cartItems.push(requestedItem);
     } else {
-      if (requestedItem.quantity <= stockItem.quantity) {
+      if (requestedItem.quantity <= stockQuantity) {
         previousCartItem = cartItem.quantity;
         cartItem.quantity = requestedItem.quantity;
       } else {

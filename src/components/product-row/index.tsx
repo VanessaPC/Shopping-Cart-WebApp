@@ -5,9 +5,9 @@ import Item from '../item';
 import { getStockQuantityError, stopReloadOnItemNotAdded, getButtonText } from './helpers';
 
 const ProductRow = ({ product, savedQuantity, onCartUpdate }) => {
-  const [selectedQuantity, setSelectedQuantity] = useState(savedQuantity);
+  const [selectedQuantity, setSelectedQuantity] = useState(savedQuantity || 1);
   const [itemAdded, setItemAdded] = useState(true);
-  const [{ data: postData, loading: putLoading, error: putError }, executePost] = useAxios(
+  const [{ data: postData, loading: postLoading, error: postError }, executePost] = useAxios(
     {
       url: config.addItem,
       method: 'POST',
@@ -19,17 +19,17 @@ const ProductRow = ({ product, savedQuantity, onCartUpdate }) => {
     getStockQuantityError(postData);
   }, [postData]);
 
-  const onQuantityUpdate = (value) => {
+  const onQuantityUpdate = (value: number) => {
     setSelectedQuantity(value);
     setItemAdded(false);
   };
 
   const onItemUpdate = async () => {
-    const postData = {
+    const updatedItem = {
       ...product,
       quantity: selectedQuantity,
     };
-    await executePost({ data: postData });
+    await executePost({ data: updatedItem });
     setItemAdded(true);
     onCartUpdate();
   };
@@ -37,8 +37,7 @@ const ProductRow = ({ product, savedQuantity, onCartUpdate }) => {
   stopReloadOnItemNotAdded(itemAdded);
 
   return (
-    <div key={product._id}>
-      <Item product={product} />
+    <div>
       <label id="quantity-select">Select a quantity:</label>
       <select
         name="item-quantity"
@@ -55,7 +54,6 @@ const ProductRow = ({ product, savedQuantity, onCartUpdate }) => {
       <button type="submit" onClick={onItemUpdate}>
         {getButtonText(savedQuantity)}
       </button>
-      <p>In stock {product.quantity}</p>
     </div>
   );
 };

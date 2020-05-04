@@ -8098,8 +8098,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../config */ "./config/index.tsx");
 /* harmony import */ var axios_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios-hooks */ "../node_modules/axios-hooks/es/index.js");
-/* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../item */ "./components/item/index.tsx");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./helpers */ "./components/product-row/helpers.tsx");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helpers */ "./components/product-row/helpers.tsx");
 
 
 
@@ -8116,13 +8115,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-
 var ProductRow = function ProductRow(_ref) {
   var product = _ref.product,
       savedQuantity = _ref.savedQuantity,
       onCartUpdate = _ref.onCartUpdate;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(savedQuantity),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(savedQuantity || 1),
       selectedQuantity = _useState[0],
       setSelectedQuantity = _useState[1];
 
@@ -8139,12 +8137,12 @@ var ProductRow = function ProductRow(_ref) {
       _useAxios2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useAxios, 2),
       _useAxios2$ = _useAxios2[0],
       postData = _useAxios2$.data,
-      putLoading = _useAxios2$.loading,
-      putError = _useAxios2$.error,
+      postLoading = _useAxios2$.loading,
+      postError = _useAxios2$.error,
       executePost = _useAxios2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
-    Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["getStockQuantityError"])(postData);
+    Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["getStockQuantityError"])(postData);
   }, [postData]);
 
   var onQuantityUpdate = function onQuantityUpdate(value) {
@@ -8154,17 +8152,17 @@ var ProductRow = function ProductRow(_ref) {
 
   var onItemUpdate = /*#__PURE__*/function () {
     var _ref2 = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
-      var postData;
+      var updatedItem;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              postData = _objectSpread(_objectSpread({}, product), {}, {
+              updatedItem = _objectSpread(_objectSpread({}, product), {}, {
                 quantity: selectedQuantity
               });
               _context.next = 3;
               return executePost({
-                data: postData
+                data: updatedItem
               });
 
             case 3:
@@ -8184,12 +8182,8 @@ var ProductRow = function ProductRow(_ref) {
     };
   }();
 
-  Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["stopReloadOnItemNotAdded"])(itemAdded);
-  return __jsx("div", {
-    key: product._id
-  }, __jsx(_item__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    product: product
-  }), __jsx("label", {
+  Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["stopReloadOnItemNotAdded"])(itemAdded);
+  return __jsx("div", null, __jsx("label", {
     id: "quantity-select"
   }, "Select a quantity:"), __jsx("select", {
     name: "item-quantity",
@@ -8206,7 +8200,7 @@ var ProductRow = function ProductRow(_ref) {
   })), __jsx("button", {
     type: "submit",
     onClick: onItemUpdate
-  }, Object(_helpers__WEBPACK_IMPORTED_MODULE_9__["getButtonText"])(savedQuantity)), __jsx("p", null, "In stock ", product.quantity));
+  }, Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["getButtonText"])(savedQuantity)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductRow);
@@ -8244,7 +8238,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   getProductList: 'http://localhost:3100/api/shop',
   getShoppingCart: 'http://localhost:3100/api/shop/cart',
-  addItem: 'http://localhost:3100/api/shop/add-item'
+  addItem: 'http://localhost:3100/api/shop/add-item',
+  removeItem: "http://localhost:3100/api/shop/remove-item"
 });
 
 /***/ }),
@@ -8266,8 +8261,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios-hooks */ "../node_modules/axios-hooks/es/index.js");
 /* harmony import */ var _components_product_row__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/product-row */ "./components/product-row/index.tsx");
+/* harmony import */ var _components_item__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/item */ "./components/item/index.tsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -8315,14 +8312,13 @@ var ShopList = function ShopList() {
   }, __jsx("a", null, "Go to checkout")), __jsx("h2", null, "Product List"), data.map(function (product) {
     return __jsx("div", {
       key: product._id
-    }, __jsx(_components_product_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }, __jsx(_components_item__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      product: product
+    }), __jsx(_components_product_row__WEBPACK_IMPORTED_MODULE_5__["default"], {
       product: product,
-      savedQuantity: getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0,
+      savedQuantity: getCurrentQuantity(product),
       onCartUpdate: refetchCart
-    }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/shop/product/[id]",
-      as: "/shop/product/".concat(product._id)
-    }, __jsx("a", null, "View product")));
+    }), __jsx("p", null, "In stock ", product.quantity));
   }));
 };
 
@@ -8330,7 +8326,7 @@ var ShopList = function ShopList() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*****************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fshop&absolutePagePath=%2FUsers%2Fvanessa%2FDocuments%2FProjects%2FShoppingCart%2Fshoppingcart%2Fsrc%2Fpages%2Fshop%2Findex.tsx ***!
   \*****************************************************************************************************************************************************************************/
@@ -8353,5 +8349,5 @@ module.exports = dll_e6a94776c4176f860599;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=shop.js.map

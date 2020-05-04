@@ -4,6 +4,7 @@ import Link from 'next/link';
 import useAxios from 'axios-hooks';
 import { Product } from '../../interfaces';
 import ProductRow from '../../components/product-row';
+import Item from '../../components/item';
 
 const ShopList = () => {
   const [{ data, loading, error }, refetch] = useAxios(config.getProductList);
@@ -17,7 +18,7 @@ const ShopList = () => {
     return <p>Our list broke!</p>;
   }
   const getItemInCart = (productId: number) => cartData.cartItems.find((item) => item._id === productId);
-  const getCurrentQuantity = (product) => (getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0);
+  const getCurrentQuantity = (product: Product) => (getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0);
 
   return (
     <div>
@@ -27,14 +28,9 @@ const ShopList = () => {
       <h2>Product List</h2>
       {data.map((product: Product) => (
         <div key={product._id}>
-          <ProductRow
-            product={product}
-            savedQuantity={getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0}
-            onCartUpdate={refetchCart}
-          />
-          <Link href="/shop/product/[id]" as={`/shop/product/${product._id}`}>
-            <a>View product</a>
-          </Link>
+          <Item product={product} />
+          <ProductRow product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
+          <p>In stock {product.quantity}</p>
         </div>
       ))}
     </div>

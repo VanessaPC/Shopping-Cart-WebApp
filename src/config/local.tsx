@@ -4,4 +4,5 @@ export default {
   getShoppingCart: 'http://localhost:3100/api/shop/cart',
   addItem: 'http://localhost:3100/api/shop/add-item',
   removeItem: `http://localhost:3100/api/shop/remove-item`,
+  getUser: 'http://localhost:3100/api/user',
 };

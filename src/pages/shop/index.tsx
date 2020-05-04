@@ -22,7 +22,7 @@ const ShopList = () => {
 
   return (
     <div>
-      <Link href="/shop/checkout/" as={`/shop/checkout`}>
+      <Link href="/shop/checkout">
         <a>Go to checkout</a>
       </Link>
       <h2>Product List</h2>

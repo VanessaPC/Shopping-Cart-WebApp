@@ -12,11 +12,13 @@ export const addItem = async (req, res) => {
     if (!stockItem) {
       return res.send({ message: 'Item does not exist' });
     }
+    const stockQuantity = stockItem.inStockQuantity;
 
     const cartItem = cart.cartItems.find((savedItem) => stockItem._id === savedItem._id);
     let previousCartItem;
 
     if (!cartItem) {
+      requestedItem.inStockQuantity = stockQuantity;
       cart.cartItems.push(requestedItem);
     } else {
       if (requestedItem.quantity <= stockItem.quantity) {
@@ -32,7 +34,6 @@ export const addItem = async (req, res) => {
     user.save();
     res.status(200).send({ message: 'Item saved' });
   } catch (err) {
-    console.log('errrrr', err);
-    res.send({ error: 'here?' });
+    res.send({ error: err });
   }
 };

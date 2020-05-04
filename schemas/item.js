@@ -17,4 +17,8 @@ export const ItemSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  inStockQuantity: {
+    type: Number,
+    required: false,
+  },
 });

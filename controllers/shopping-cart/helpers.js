@@ -1,13 +1,11 @@
 const getDeletedQuantity = (prevQuantity, currentQuantity) => prevQuantity - currentQuantity;
-const correctTotalPrice = (price, quantity) => price * quantity;
 
 export const updateCart = (user, cart, item, previousQuantity) => {
   try {
     if (previousQuantity > item.quantity) {
-      const deletedQuantity = getDeletedQuantity(previousQuantity, item.quantity);
-      updateRemovedItems(user, item, deletedQuantity);
-      cart.totalItems -= deletedQuantity;
-      cart.totalPrice -= correctTotalPrice(item.price * deletedQuantity);
+      cart.totalItems -= getDeletedQuantity(previousQuantity, item.quantity);
+      updateRemovedItems(user, item, previousQuantity - item.quantity);
+      cart.totalPrice -= item.price * previousQuantity;
     } else {
       cart.totalItems += item.quantity;
       cart.totalPrice += item.price * item.quantity;

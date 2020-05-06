@@ -42,8 +42,11 @@ const Checkout = () => {
   }
 
   const handleItemRemove = async (product) => {
-    await executePost({ data: product });
-    refetchCart();
+    if (confirm('Are you sure you want to remove this item?')) {
+      await executePost({ data: product });
+      refetchCart();
+    }
+    return null;
   };
 
   const getItemInCart = (productId: number) => cartData.cartItems.find((item) => item._id === productId);
@@ -66,7 +69,7 @@ const Checkout = () => {
             <ItemDetails product={product} />
             <ItemQuantity product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
             <Button type="submit" secondary onClick={(e) => handleItemRemove(product)}>
-              Remove item from basket
+              Delete from shopping cart
             </Button>
           </ItemContainer>
         ))}

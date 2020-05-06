@@ -30,7 +30,7 @@ export const CheckoutContainer = styled.div`
   padding: 0.3rem 1rem;
 `;
 
-export const ImportantInformation = styled.p`
+export const ImportantInformation = styled.span`
   display: inline;
   font-weight: 600;
 `;

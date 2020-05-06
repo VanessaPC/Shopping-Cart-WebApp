@@ -20,11 +20,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/next/dist/pages/_error": [
+    "/shop": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/shop": [
+    "/shop/checkout": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -923,7 +923,13 @@ var MyDocument = /*#__PURE__*/function (_Document) {
   _createClass(MyDocument, [{
     key: "render",
     value: function render() {
-      return __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], null), __jsx("body", null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
+      return __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Html"], null, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], null), __jsx("body", null, __jsx("link", {
+        rel: "stylesheet",
+        href: "css/three-dots.min.css"
+      }), __jsx("link", {
+        href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+        rel: "stylesheet"
+      }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], null), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], null)));
     }
   }]);
 

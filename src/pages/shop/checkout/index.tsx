@@ -3,10 +3,12 @@ import Link from 'next/link';
 import config from '../../../config';
 import { Product } from '../../../interfaces';
 import useAxios from 'axios-hooks';
-import ProductRow from '../../../components/product-row';
+import ItemQuantity from '../../../components/item-quantity';
 
 const Checkout = () => {
-  const [{ data: cartData, loading: loadingCart, error: cartError }, refetchCart] = useAxios(config.getShoppingCart);
+  const [{ data: cartData, loading: loadingCart, error: cartError }, refetchCart] = useAxios(config.getShoppingCart, {
+    useCache: false,
+  });
   const [{ data: postData, loading: postLoading, error: postError }, executePost] = useAxios(
     {
       url: config.removeItem,
@@ -51,7 +53,7 @@ const Checkout = () => {
         <div key={product._id}>
           <p>Item name: {product.name}</p>
           <p>Total item/s price: {product.price}</p>
-          <ProductRow product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
+          <ItemQuantity product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
           <button type="submit" onClick={(e) => handleItemRemove(product)}>
             Remove item from basket
           </button>

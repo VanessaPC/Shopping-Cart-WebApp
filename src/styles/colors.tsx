@@ -1,0 +1,10 @@
+export const GREEN_400 = '#89E6C2';
+export const GREEN_600 = '#56B38F';
+export const GREEN_700 = '#41866B';
+export const YELLOW_200 = '#FFEDBD';
+export const YELLOW_300 = '#FFE39C';
+export const YELLOW_400 = '#FFDA7B';
+export const YELLOW_600 = '#CCA748';
+export const ORANGE_400 = '#EB653D';
+export const ORANGE_600 = '#B8320A';
+export const GREY_TEXT = '#222222';

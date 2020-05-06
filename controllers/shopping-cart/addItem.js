@@ -9,14 +9,14 @@ export const addItem = async (req, res) => {
 
   try {
     const stockItem = await Items.findOne({ _id: requestedItem._id });
+
     if (!stockItem) {
       return res.send({ message: 'Item does not exist' });
     }
-    const stockQuantity = stockItem.inStockQuantity;
 
+    const stockQuantity = stockItem.inStockQuantity;
     const cartItem = cart.cartItems.find((savedItem) => stockItem._id === savedItem._id);
     let previousCartItem;
-
     if (!cartItem) {
       requestedItem.inStockQuantity = stockQuantity;
       cart.cartItems.push(requestedItem);

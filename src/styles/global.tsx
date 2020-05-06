@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { typography } from './typography';
-import { ORANGE_600, ORANGE_400 } from './colors';
+import { GREEN_400, GREEN_600 } from './colors';
 
 export const GlobalStyle = createGlobalStyle`
   ${typography};
@@ -26,12 +26,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
   a {
-    color: ${ORANGE_400};
+    color: ${GREEN_600};
     text-decoration: none;
     transition: all .3s ease-out;
   }
   a:hover {
-    color: ${ORANGE_600};
+    color: ${GREEN_400};
   }
   button {
     border: 0;

@@ -7865,12 +7865,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var Navigation = function Navigation() {
   return __jsx(_styles__WEBPACK_IMPORTED_MODULE_2__["NavigationContainer"], null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/shop/checkout",
-    passHref: true
-  }, __jsx(_styles__WEBPACK_IMPORTED_MODULE_2__["NavigationLinks"], null, "Checkout")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/shop",
     passHref: true
-  }, __jsx(_styles__WEBPACK_IMPORTED_MODULE_2__["NavigationLinks"], null, "Shop")));
+  }, __jsx(_styles__WEBPACK_IMPORTED_MODULE_2__["NavigationLinks"], null, "Shop")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/shop/checkout",
+    passHref: true
+  }, __jsx(_styles__WEBPACK_IMPORTED_MODULE_2__["NavigationLinks"], null, "Checkout")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navigation);
@@ -7895,11 +7895,11 @@ __webpack_require__.r(__webpack_exports__);
 var NavigationContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "styles__NavigationContainer",
   componentId: "sc-1n46p0w-0"
-})(["display:flex;flex-direction:row;background-color:", ";color:", ";padding:1.5rem 4rem;vertical-align:middle;justify-content:flex-end;"], _styles_colors__WEBPACK_IMPORTED_MODULE_1__["ORANGE_100"], _styles_colors__WEBPACK_IMPORTED_MODULE_1__["GREEN_600"]);
+})(["display:flex;flex-direction:row;background-color:", ";color:", ";padding:1.5rem 4rem;vertical-align:middle;justify-content:flex-end;"], _styles_colors__WEBPACK_IMPORTED_MODULE_1__["GREEN_700"], _styles_colors__WEBPACK_IMPORTED_MODULE_1__["GREEN_600"]);
 var NavigationLinks = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a.withConfig({
   displayName: "styles__NavigationLinks",
   componentId: "sc-1n46p0w-1"
-})(["padding:0.5rem;"]);
+})(["padding:0.5rem;color:", ";&:hover{color:'#fff';}"], _styles_colors__WEBPACK_IMPORTED_MODULE_1__["GREEN_100"]);
 
 /***/ }),
 
@@ -8007,7 +8007,7 @@ function _templateObject() {
 
 
 
-var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject(), _typography__WEBPACK_IMPORTED_MODULE_2__["typography"], _colors__WEBPACK_IMPORTED_MODULE_3__["ORANGE_400"], _colors__WEBPACK_IMPORTED_MODULE_3__["ORANGE_600"]);
+var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"])(_templateObject(), _typography__WEBPACK_IMPORTED_MODULE_2__["typography"], _colors__WEBPACK_IMPORTED_MODULE_3__["GREEN_600"], _colors__WEBPACK_IMPORTED_MODULE_3__["GREEN_400"]);
 var FlexCol = "\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n";
 
 /***/ }),

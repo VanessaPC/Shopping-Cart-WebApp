@@ -10,7 +10,7 @@ export const ListContainer = styled.div`
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px;
   background: ${YELLOW_200};
   padding: 1rem;
   margin: 1rem;

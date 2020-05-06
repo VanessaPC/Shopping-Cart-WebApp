@@ -19,7 +19,7 @@ This are personal notes, taken while working on it, you can completely discard o
 ### Major decissions behind it:
 
 - Why NextJS?.
-- Why Redux?
+- Why not Redux?
 - Why simple server set up and not something fancier like GraphQL or stuff.
 
 ### Timeline of events:
@@ -32,15 +32,16 @@ This are personal notes, taken while working on it, you can completely discard o
   Clean up of code, and biggest code smells. Happy with idea behind it and how is looking.
 - Thursday:
   Approx 3 Hours -> Set up of combined server plus client side app. Typescript set up. Calls to server set up and working, initial code architecture set up for server side render and initial minimal store,
-- Friday: Approx: 2 hours. connected two calls. More strucutre on front end.
-- Sunday: List connected with all the add, two more calls added and i'm ok with how list works. Some cleanup on server and front end side.
+- Friday: Approx: 2 hours. connected two calls. More estructure on front end.
+- Sunday: Approx 1 hour. List connected with all the add, two more calls added and i'm ok with how list works. Some cleanup on server and front end side.
+- Tuesday: Approx: 1 hour. Added some cleanup and started the UI.
+- Wednesday: Aprox. 3 hours. Added all UI components. Commented the server. Cleaned up a couple of bugs. Added Babel for typescript.
 
 ### I'd like to add:
 
 - [ ] TS to the server.
 - [ ] Authentication to server.
-- [ ] code documentation
-- [ ] Keep track of how many items do I have and how many have been bought to render real time quantities on shopping list.
+- [ ] Code documentation
 - [ ] Add Cypress on client side
 - [ ] Add unit test on server side
 

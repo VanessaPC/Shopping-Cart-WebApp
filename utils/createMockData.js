@@ -2,6 +2,10 @@ import { User } from '../models/user.model';
 import { Items } from '../models/item.model';
 import { stock } from '../dataset/stock';
 
+/**
+ * This file is mocking all the needed data for the server.
+ */
+
 const newUserData = {
   _id: '5e0efe265ae4232f32541f56',
   status: 'logged_in',

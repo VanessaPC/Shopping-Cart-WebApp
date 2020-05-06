@@ -1,6 +1,14 @@
 import { User } from '../../models/user.model';
 import { updateRemovedItems } from './helpers';
 
+/**
+ * Remove Item:
+ * Api endpoint handler to remove a n number of items from
+ * the user's cart.
+ * @param {*} req
+ * @param {*} res
+ */
+
 export const removeItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
   const { cart } = user;
@@ -8,6 +16,7 @@ export const removeItem = async (req, res) => {
 
   try {
     const itemInCart = cart.cartItems.find((item) => itemToDelete._id === item._id);
+
     if (!itemInCart) {
       return res.send({ message: 'Item does not exist in user cart' });
     }

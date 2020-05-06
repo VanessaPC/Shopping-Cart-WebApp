@@ -8,7 +8,6 @@ const connectDb = () =>
   mongoose.connect(config.mongoDBUri, { useFindAndModify: false, useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.once('open', () => {
-  console.log('Connection opened here', config);
   createMockData();
   createShoppingItemsData();
 });

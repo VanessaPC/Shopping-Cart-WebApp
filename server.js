@@ -9,7 +9,6 @@ const server = http.createServer(app);
 (async () => {
   connectDb().then(async () => {
     await nextApp.prepare();
-
     server.listen(port, () => console.log(`Example app listening on port ${port}!`));
   });
 })();

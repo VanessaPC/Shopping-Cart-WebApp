@@ -2,6 +2,12 @@ import { User } from '../../models/user.model';
 import { Items } from '../../models/item.model';
 import { updateCart } from './helpers';
 
+/**
+ * Add Item:
+ * Adds items to the user's shopping cart.
+ * @param {*} req
+ * @param {*} res
+ */
 export const addItem = async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
   const { cart } = user;

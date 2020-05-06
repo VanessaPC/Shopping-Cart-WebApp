@@ -1,8 +1,17 @@
 import React from 'react';
-import Button from './styles';
+import { Button, Wrapper } from './styles';
 
-const Button = () => {
-  <Wrapper>
-    <Button></Button>
-  </Wrapper>;
+export const Types = {
+  primary: 'primary',
+  secondary: 'secondary',
 };
+
+const ButtonComponent = ({ children, onClick, secondary }: any) => (
+  <Wrapper>
+    <Button onClick={onClick} secondary={secondary}>
+      {children}
+    </Button>
+  </Wrapper>
+);
+
+export default ButtonComponent;

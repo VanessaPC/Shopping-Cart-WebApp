@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { NavigationContainer, NavigationLinks } from './styles';
 
 const Navigation = () => (
-  <>
-    <Link href="/shop/checkout">
-      <a>Go to checkout</a>
+  <NavigationContainer>
+    <Link href="/shop/checkout" passHref>
+      <NavigationLinks>Checkout</NavigationLinks>
     </Link>
-  </>
+    <Link href="/shop" passHref>
+      <NavigationLinks>Shop</NavigationLinks>
+    </Link>
+  </NavigationContainer>
 );
 
 export default Navigation;

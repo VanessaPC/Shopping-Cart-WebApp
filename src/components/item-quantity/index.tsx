@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import config from '../../config';
 import useAxios from 'axios-hooks';
-import { getStockQuantityError, stopReloadOnItemNotAdded, getButtonText } from './helpers';
+import Button from '../../components/button';
+import { getButtonText } from './helpers';
 import { SelectorContainer, SelectorLabel, Selector } from './styles';
 
 const ItemQuantity = ({ product, savedQuantity, onCartUpdate }) => {
@@ -14,10 +15,6 @@ const ItemQuantity = ({ product, savedQuantity, onCartUpdate }) => {
     },
     { manual: true }
   );
-
-  useEffect(() => {
-    getStockQuantityError(postData);
-  }, [postData]);
 
   const onQuantityUpdate = (value: number) => {
     setSelectedQuantity(value);
@@ -33,8 +30,6 @@ const ItemQuantity = ({ product, savedQuantity, onCartUpdate }) => {
     setItemAdded(true);
     onCartUpdate();
   };
-
-  stopReloadOnItemNotAdded(itemAdded);
 
   return (
     <>
@@ -52,9 +47,9 @@ const ItemQuantity = ({ product, savedQuantity, onCartUpdate }) => {
             </option>
           ))}
         </Selector>
-        <button type="submit" onClick={onItemUpdate}>
+        <Button type="submit" onClick={onItemUpdate}>
           {getButtonText(savedQuantity)}
-        </button>
+        </Button>
       </SelectorContainer>
     </>
   );

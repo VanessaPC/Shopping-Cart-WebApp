@@ -1,9 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React from 'react';
+import router from 'next/router';
 import config from '../../../config';
 import { Product } from '../../../interfaces';
 import useAxios from 'axios-hooks';
 import ItemQuantity from '../../../components/item-quantity';
+import ItemDetails from '../../../components/item-details';
+import Button from '../../../components/button';
+import Loader from '../../../components/loader';
+import Redirect from '../../../components/redirect';
+import {
+  PageTitle,
+  ListContainer,
+  ItemContainer,
+  ShopContainer,
+  CheckoutContainer,
+  ImportantInformation,
+} from '../../../styles/base';
 
 const Checkout = () => {
   const [{ data: cartData, loading: loadingCart, error: cartError }, refetchCart] = useAxios(config.getShoppingCart, {
@@ -18,23 +30,17 @@ const Checkout = () => {
   );
 
   if (loadingCart) {
-    return <p>Loading</p>;
+    return <Loader />;
   }
 
   if (cartError) {
-    return <p>There's been an issue with this cart.</p>;
+    return router.push('/error');
   }
 
   if (cartData.cartItems.length === 0) {
-    return (
-      <>
-        <h3>Your cart its empty, why don't you see our list of products?</h3>
-        <Link href="/shop" as="/shop">
-          <a>Go to shop!</a>
-        </Link>
-      </>
-    );
+    return <Redirect />;
   }
+
   const handleItemRemove = async (product) => {
     await executePost({ data: product });
     refetchCart();
@@ -44,22 +50,28 @@ const Checkout = () => {
   const getCurrentQuantity = (product: Product) => (getItemInCart(product._id) ? getItemInCart(product._id).quantity : 0);
 
   return (
-    <>
-      <h2>Checkout</h2>
-      <h3>Your cart here:</h3>
-      <p>Total items: {cartData.totalItems}</p>
-      <p>Total price: {cartData.totalPrice} Euros</p>
-      {cartData.cartItems.map((product) => (
-        <div key={product._id}>
-          <p>Item name: {product.name}</p>
-          <p>Total item/s price: {product.price}</p>
-          <ItemQuantity product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
-          <button type="submit" onClick={(e) => handleItemRemove(product)}>
-            Remove item from basket
-          </button>
-        </div>
-      ))}
-    </>
+    <ShopContainer>
+      <PageTitle>Checkout</PageTitle>
+      <CheckoutContainer>
+        <p>
+          Total items: <ImportantInformation>{cartData.totalItems}</ImportantInformation>
+        </p>
+        <p>
+          Total price: <ImportantInformation>{cartData.totalPrice} Euros</ImportantInformation>
+        </p>
+      </CheckoutContainer>
+      <ListContainer>
+        {cartData.cartItems.map((product) => (
+          <ItemContainer key={product._id}>
+            <ItemDetails product={product} />
+            <ItemQuantity product={product} savedQuantity={getCurrentQuantity(product)} onCartUpdate={refetchCart} />
+            <Button type="submit" secondary onClick={(e) => handleItemRemove(product)}>
+              Remove item from basket
+            </Button>
+          </ItemContainer>
+        ))}
+      </ListContainer>
+    </ShopContainer>
   );
 };
 

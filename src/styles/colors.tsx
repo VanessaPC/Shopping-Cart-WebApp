@@ -1,3 +1,5 @@
+export const WHITE_300 = '#DDD';
+export const GREEN_100 = '#E2F9F0';
 export const GREEN_400 = '#89E6C2';
 export const GREEN_600 = '#56B38F';
 export const GREEN_700 = '#41866B';
@@ -5,6 +7,11 @@ export const YELLOW_200 = '#FFEDBD';
 export const YELLOW_300 = '#FFE39C';
 export const YELLOW_400 = '#FFDA7B';
 export const YELLOW_600 = '#CCA748';
+export const ORANGE_100 = '#FAD9CE';
+export const ORANGE_200 = '#F5B29E';
+export const ORANGE_300 = '#F08C6D';
 export const ORANGE_400 = '#EB653D';
 export const ORANGE_600 = '#B8320A';
+export const ORANGE_700 = '#8A2607';
+export const ORANGE_800 = '#5C1905';
 export const GREY_TEXT = '#222222';

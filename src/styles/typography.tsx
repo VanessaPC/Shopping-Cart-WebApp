@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { GREY_TEXT } from './colors';
+import { GREY_TEXT, ORANGE_100, GREEN_600 } from './colors';
 
 export const ROBOTO = 'Roboto';
 
@@ -50,9 +50,13 @@ export const typography = css`
     letter-spacing: 0.02rem;
   }
 
+  a {
+    color: ${GREEN_600};
+  }
+
   h4, span, button {
     font-size: 0.8125rem;
-    line-height: 0.7rem;
+    line-height: 1.7rem;
     letter-spacing: 0.02rem;
   }
 

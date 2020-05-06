@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from '../../interfaces';
+import { formatMoney } from '../../helpers';
 import { ItemImage, ItemImageWrapper } from './styles';
 
 const ItemDetails = ({ product }: { product: Product }) => {
@@ -14,7 +15,7 @@ const ItemDetails = ({ product }: { product: Product }) => {
       <ItemImageWrapper>
         <ItemImage src={image} />
       </ItemImageWrapper>
-      <p>{price} Euros</p>
+      <p>{formatMoney(price)}</p>
     </>
   );
 };

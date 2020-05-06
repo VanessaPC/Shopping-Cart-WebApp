@@ -8,6 +8,7 @@ import ItemDetails from '../../../components/item-details';
 import Button from '../../../components/button';
 import Loader from '../../../components/loader';
 import Redirect from '../../../components/redirect';
+import { formatMoney } from '../../../helpers';
 import {
   PageTitle,
   ListContainer,
@@ -60,7 +61,7 @@ const Checkout = () => {
           Total items: <ImportantInformation>{cartData.totalItems}</ImportantInformation>
         </p>
         <p>
-          Total price: <ImportantInformation>{cartData.totalPrice} Euros</ImportantInformation>
+          Total price: <ImportantInformation>{formatMoney(cartData.totalPrice)}</ImportantInformation>
         </p>
       </CheckoutContainer>
       <ListContainer>

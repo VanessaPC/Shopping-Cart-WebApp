@@ -8,6 +8,11 @@ const USER_STATUS = {
   NULL: 'null',
 };
 
+/**
+ * In this file we would re-route the user to the different
+ * pages of the app, registration, login, or shopping cart.
+ */
+
 const LandingPage = () => {
   const [{ data, loading, error }, refetch] = useAxios(config.getUser, { useCache: false });
 

@@ -5,22 +5,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-yarn dev
+Clone the repo
+1. - yarn build:next
+2. - yarn start:dev
+(any other time, just the second rule)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Open [http://localhost:3100](http://localhost:3100) with your browser to see the result.
 
 ## Personal notes on the project progression.
 
 This are personal notes, taken while working on it, you can completely discard or ignore them.
 
-### Major decissions behind it:
+### Major decisions behind it:
 
 - Why NextJS?.
+  For the SSR service, for the ability to have both SSR and static rendering, I think it would apply to a project like this. The nice feature for API server mocking, and the cool router it comes with.
 - Why not Redux?
-- Why simple server set up and not something fancier like GraphQL or stuff.
+  For this small example, I didn't think I needed it. To develop it into a full blown shopping cart we probably want to add it, so we can have access to the stock of the shopping cart
+  in case either the user's connection isn't great.
+- Why simple server set up and not something fancier like GraphQL or stuff. I think this served the purpose of answering the task, GraphQL is great and I have used it, I thought I'd go with something really simple.
+- What about tests?
+  I decided to send what I had with no tests so far, because again, it answers the task, as if I was showing an MVP to a client, or a lead. However, I would implement tests on both the server and the client side before deploying to production. I would use Cypress for the E2E tests on the client side, although Cucumber and Pupeteer are really nice to work with as well (and in some cases more stable), and Mocha for unit testing.
 
 ### Timeline of events:
 
@@ -41,7 +47,7 @@ This are personal notes, taken while working on it, you can completely discard o
 
 - [ ] TS to the server.
 - [ ] Authentication to server.
-- [ ] Code documentation
+- [x] Code documentation
 - [ ] Add Cypress on client side
 - [ ] Add unit test on server side
 

@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\n\nvar ShopList = function ShopList() {\n  console.log('rendering stuff');\n  return __jsx(\"div\", null, __jsx(\"h2\", null, \"Product List\"), __jsx(\"p\", null, \"Wooop\"));\n};\n\nexport default ShopList;","map":null,"metadata":{},"sourceType":"module"}

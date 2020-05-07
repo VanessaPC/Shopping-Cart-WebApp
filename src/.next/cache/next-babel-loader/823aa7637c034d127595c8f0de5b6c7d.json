@@ -1,1 +1,0 @@
-{"ast":null,"code":"","map":{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":["export type Product = {\n  _id: number;\n  name: string;\n  quantity: number;\n  price: number;\n};\n"]},"metadata":{},"sourceType":"script"}

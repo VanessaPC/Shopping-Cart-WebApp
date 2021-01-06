@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.9.6",
     "@types/react-bootstrap": "^1.0.1",
     "@webcomponents/webcomponentsjs": "^2.4.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-hooks": "^1.10.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.10.7",

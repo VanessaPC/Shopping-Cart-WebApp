@@ -37,7 +37,7 @@
     "logger": "^0.0.1",
     "mongoose": "^5.9.10",
     "morgan": "^1.10.0",
-    "next": "9.3.5",
+    "next": "11.1.0",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react": "16.13.1",
